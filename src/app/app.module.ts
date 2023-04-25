@@ -7,10 +7,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { LoginComponent } from './component/login/login.component';
-import { RegisterComponent } from './component/register/register.component';
-import { MenuComponent } from './component/menu/menu.component';
-import { BoardComponent } from './component/board/board.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { BoardComponent } from './components/board/board.component';
+import { GatoComponent } from './components/gato/gato/gato.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BoardComponent } from './component/board/board.component';
     LoginComponent,
     RegisterComponent,
     MenuComponent,
-    BoardComponent
+    BoardComponent,
+    GatoComponent
   
     
   

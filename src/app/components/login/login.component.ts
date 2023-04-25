@@ -48,7 +48,7 @@ export class LoginComponent {
           this.authService.setToken(res.token);
           
           localStorage.setItem('email', form.email);
-          this.router.navigate(['/menu']);
+          this.router.navigate(['/gato']);
           
           
         }

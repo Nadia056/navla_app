@@ -1,0 +1,30 @@
+<!-- <h1>Tic Tac Toe</h1>
+<div class="board">
+  <div *ngFor="let cell of board; let i = index" class="cell" (click)="makeMove(i)">
+    {{ cell }}
+  </div>
+</div>
+<div *ngIf="winner">{{ winner }} wins!</div>
+
+<br>
+<br>
+<br>
+
+<button (click)="resetGame()" class="btn btn-secondary">Reset Game</button> -->
+
+<div class="container" id="main">
+  <span id="turn">Tic Tac Toe</span>
+  <span id="turn">Turn: {{ currentPlayer }}</span>
+  <div class="box" style="border-left: 0; border-top: 0" id="box1" (click)="makeMove(0)">{{ board[0] }}</div>
+  <div class="box" style="border-top: 0" id="box2" (click)="makeMove(1)">{{ board[1] }}</div>
+  <div class="box" style="border-top: 0; border-right: 0" id="box3" (click)="makeMove(2)">{{ board[2] }}</div>
+  <div class="box" style="border-left: 0" id="box4" (click)="makeMove(3)">{{ board[3] }}</div>
+  <div class="box" id="box5" (click)="makeMove(4)">{{ board[4] }}</div>
+  <div class="box" style="border-right: 0" id="box6" (click)="makeMove(5)">{{ board[5] }}</div>
+  <div class="box" style="border-left: 0; border-bottom: 0" id="box7" (click)="makeMove(6)">{{ board[6] }}</div>
+  <div class="box" style="border-bottom: 0" id="box8" (click)="makeMove(7)">{{ board[7] }}</div>
+  <div class="box" style="border-right: 0; border-bottom: 0" id="box9" (click)="makeMove(8)">{{ board[8] }}</div>
+</div>
+<div *ngIf="winner" class="winner-message">{{ winner }} wins!</div>
+<br>
+<button (click)="resetGame()" class="btn btn-danger">Reset Game</button>
