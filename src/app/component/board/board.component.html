@@ -1,0 +1,29 @@
+<div *ngFor="let board of boards" class="board" >
+  <h3>Player {{board.player.id}}</h3>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let letter of ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']">{{letter}}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of board.tiles; let rowIndex = index">
+        <td class="row-index">{{1 + rowIndex}}</td>
+        <td *ngFor="let tile of row; let colIndex = index" 
+            [ngClass]="tile.status"
+            [style.position]="'relative'"
+            (click)="onTileClick(board, tile, rowIndex, colIndex)"
+            [class.clicked]="!tile.hidden">
+          <span [class.hidden]="tile.hidden" [ngStyle]="{'color': tile.valueColor}">{{tile.value}}</span>
+          <div *ngIf="tile.coordinate">
+          </div>
+          
+        </td>
+      </tr>
+    </tbody>   
+  </table>
+</div>
+<button (click)="cerrar()">Cerrsar Sesion</button>
+
