@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoginService } from 'src/app/Services/login.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-gato',
@@ -6,6 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./gato.component.css']
 })
 export class GatoComponent {
+
+  constructor(private loginservice:LoginService, private router: Router) {
+    
+   }
+
   board = ['', '', '', '', '', '', '', '', ''];
   currentPlayer = 'X';
   winner = '';
@@ -40,6 +47,12 @@ export class GatoComponent {
     this.board = ['', '', '', '', '', '', '', '', ''];
     this.currentPlayer = 'X';
     this.winner = '';
+  }
+
+
+  cerrarSesion() {
+    this.loginservice.logout();
+    this.router.navigate(['/login']);
   }
 }
 

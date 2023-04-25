@@ -5,9 +5,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { BoardComponent } from './components/board/board.component';
 import { GatoComponent } from './components/gato/gato/gato.component';
+import { LoginGuard } from './guards/login/login.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent,canActivate:[LoginGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'board', component: BoardComponent },
